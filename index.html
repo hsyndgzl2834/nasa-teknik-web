@@ -8,137 +8,123 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
   <style>
-    body { font-family: 'Inter', sans-serif; background-color: #f2f4f8; margin: 0; scroll-behavior: smooth; }
-    .navbar { background-color: #ffffff; }
-    .logo { height: 60px; }
-    .navbar-brand span { font-size: 1.25rem; font-weight: 600; }
-    .hero { background: linear-gradient(to right, #1c3c72, #4175ab); color: #ffffff; text-align: center; padding: 100px 0 60px; }
-    .section-title { font-size: 1.85rem; font-weight: 600; margin-bottom: 30px; color: #1c3c72; }
-    section { padding: 60px 0; }
-    .card { border: none; box-shadow: 0 6px 12px rgba(0,0,0,0.1); border-radius: 20px; transition: transform 0.3s ease; }
-    .card:hover { transform: scale(1.03); }
-    .card img { margin-bottom: 0.75rem; }
-    .card h5 { margin: 0.5rem 0; font-size: 1.1rem; }
-    .card p { margin-bottom: 0; font-size: 0.95rem; }
-    footer { background-color: #1c3c72; color: #ffffff; text-align: center; padding: 40px 0; }
+    body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; margin: 0; }
+    .navbar { background-color: #ffffff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .navbar-brand { display: flex; align-items: center; }
+    .logo { height: 50px; border-radius: 50%; border: 2px solid #1c3c72; }
+    .btn-whatsapp { background-color: #25D366; color: white; }
+    .hero { position: relative; height: 80vh; background: url('images/hero.jpg') center/cover no-repeat; display: flex; align-items: center; justify-content: center; }
+    .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(28, 60, 114, 0.6); }
+    .hero-content { position: relative; color: white; text-align: center; z-index: 2; }
+    .hero-content h1 { font-size: 4rem; font-weight: 700; }
+    .hero-content p { font-size: 1.25rem; margin-bottom: 2rem; }
+    .services, .products { padding: 80px 0; }
+    .services .card, .products .card { border: none; border-radius: 1rem; overflow: hidden; position: relative; transition: transform 0.3s; }
+    .services .card:hover, .products .card:hover { transform: translateY(-10px); }
+    .services .card img, .products .card img { border-radius: 1rem 1rem 0 0; }
+    .services .card-body, .products .card-body { padding: 1.5rem; text-align: center; }
+    .products { background-color: #e9ecef; }
+    footer { background-color: #1c3c72; color: white; padding: 2rem 0; text-align: center; }
+    @media (max-width: 768px) { .hero-content h1 { font-size: 2.5rem; } }
   </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+  <nav class="navbar navbar-expand-lg">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="images/logo.png" alt="NASA Logo" class="logo me-2" loading="lazy">
-        <span>NASA TEKNİK HİZMETLER</span>
+        <img src="images/logo.png" alt="NASA Logo" class="logo me-2">
+        <span class="text-dark fs-5 fw-bold">NASA TEKNİK HİZMETLER</span>
       </a>
       <div class="ms-auto">
-        <a href="https://wa.me/905316250694" target="_blank" class="btn btn-outline-success">
-          <i class="bi bi-whatsapp me-1"></i> WhatsApp
+        <a href="https://wa.me/905316250694" target="_blank" class="btn btn-whatsapp">
+          <i class="bi bi-whatsapp"></i> WhatsApp
         </a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <section class="hero">
-    <div class="container">
-      <h1 class="display-4 fw-bold mb-3">NASA TEKNİK HİZMETLER</h1>
-      <p class="lead mb-4">Türkiye genelinde brülör ve otomasyon servis hizmeti</p>
-      <img src="images/hero.jpg" alt="Teknik Servis Görseli" class="img-fluid rounded" loading="lazy" width="1200" height="600">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>NASA TEKNİK HİZMETLER</h1>
+      <p>Türkiye genelinde brülör ve otomasyon servis hizmeti</p>
+      <button class="btn btn-outline-light btn-lg">Hizmetlerimize Göz At</button>
     </div>
   </section>
 
-  <!-- Hizmetler -->
-  <section class="bg-white">
+  <section class="services">
     <div class="container">
-      <h2 class="text-center section-title">Hizmetlerimiz</h2>
+      <h2 class="text-center mb-5">Hizmetlerimiz</h2>
       <div class="row g-4">
         <div class="col-md-4">
-          <div class="card p-4 text-center">
-            <img src="images/service1.jpg" alt="Brülör Servisi" class="img-fluid rounded" loading="lazy" width="400" height="250">
-            <h5>Brülör Servisi</h5>
-            <p>Endüstriyel sistemler için periyodik bakım ve arıza giderme hizmeti.</p>
+          <div class="card">
+            <img src="images/service1.jpg" alt="Brülör Servisi" class="img-fluid">
+            <div class="card-body">
+              <h5 class="card-title">Brülör Servisi</h5>
+              <p class="card-text">Periyodik bakım ve arıza giderme hizmeti.</p>
+            </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card p-4 text-center">
-            <img src="images/service2.jpg" alt="Yakma Kontrol Sistemleri" class="img-fluid rounded" loading="lazy" width="400" height="250">
-            <h5>Yakma Kontrol Sistemleri</h5>
-            <p>Emniyet röleleri ve kontrol sistemlerinde kurulum ve destek.</p>
+          <div class="card">
+            <img src="images/service2.jpg" alt="Yakma Kontrol Sistemleri" class="img-fluid">
+            <div class="card-body">
+              <h5 class="card-title">Yakma Kontrol Sistemleri</h5>
+              <p class="card-text">Emniyet röleleri ve kontrol sistemleri kurulumu.</p>
+            </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card p-4 text-center">
-            <img src="images/service3.jpg" alt="Otomasyon Çözümleri" class="img-fluid rounded" loading="lazy" width="400" height="250">
-            <h5>Otomasyon Çözümleri</h5>
-            <p>PLC, HMI ve modbus tabanlı otomasyon çözümleriyle üretiminizi yönetin.</p>
+          <div class="card">
+            <img src="images/service3.jpg" alt="Otomasyon Çözümleri" class="img-fluid">
+            <div class="card-body">
+              <h5 class="card-title">Otomasyon Çözümleri</h5>
+              <p class="card-text">PLC, HMI ve modbus tabanlı uygulamalar.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Ürünler -->
-  <section class="bg-light">
+  <section class="products">
     <div class="container">
-      <h2 class="text-center section-title">Ürünlerimiz</h2>
+      <h2 class="text-center mb-5">Ürünlerimiz</h2>
       <div class="row g-4">
-        <div class="col-6 col-md-3">
-          <div class="card p-3 text-center">
-            <img src="images/product1.jpg" alt="Gaz Valfleri" class="img-fluid rounded" loading="lazy" width="300" height="200">
-            <h5>Gaz Valfleri</h5>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="card p-3 text-center">
-            <img src="images/product2.jpg" alt="Alev Dedektörleri" class="img-fluid rounded" loading="lazy" width="300" height="200">
-            <h5>Alev Dedektörleri</h5>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="card p-3 text-center">
-            <img src="images/product3.jpg" alt="Otomasyon Modülleri" class="img-fluid rounded" loading="lazy" width="300" height="200">
-            <h5>Otomasyon Modülleri</h5>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="card p-3 text-center">
-            <img src="images/product4.jpg" alt="Yedek Parçalar" class="img-fluid rounded" loading="lazy" width="300" height="200">
-            <h5>Yedek Parçalar</h5>
-          </div>
-        </div>
+        <div class="col-6 col-md-3"><div class="card"><img src="images/product1.jpg" class="img-fluid"><div class="card-body"><h6>Gaz Valfleri</h6></div></div></div>
+        <div class="col-6 col-md-3"><div class="card"><img src="images/product2.jpg" class="img-fluid"><div class="card-body"><h6>Alev Dedektörleri</h6></div></div></div>
+        <div class="col-6 col-md-3"><div class="card"><img src="images/product3.jpg" class="img-fluid"><div class="card-body"><h6>Otomasyon Modülleri</h6></div></div></div>
+        <div class="col-6 col-md-3"><div class="card"><img src="images/product4.jpg" class="img-fluid"><div class="card-body"><h6>Yedek Parçalar</h6></div></div></div>
       </div>
     </div>
   </section>
 
-  <!-- İletişim -->
   <section class="bg-white">
-    <div class="container">
-      <h2 class="text-center section-title">Bize Ulaşın</h2>
-      <div class="row">
+    <div class="container py-5">
+      <h2 class="text-center mb-5">Bize Ulaşın</h2>
+      <div class="row g-4">
         <div class="col-md-6">
-          <form action="https://formspree.io/f/mvgandne" method="POST" class="mx-auto" style="max-width:500px;">
+          <form action="https://formspree.io/f/mvgandne" method="POST" style="max-width:500px;">
             <div class="mb-3"><label for="name" class="form-label">Adınız</label><input type="text" id="name" name="name" class="form-control" required></div>
             <div class="mb-3"><label for="email" class="form-label">E-posta</label><input type="email" id="email" name="_replyto" class="form-control" required></div>
-            <div class="mb-3"><label for="message" class="form-label">Mesajınız</label><textarea id="message" name="message" rows="4" class="form-control" required></textarea></div>
-            <button type="submit" class="btn btn-primary w-100">Gönder</button>
+            <div class="mb-3"><label for="message" class="form-label">Mesajınız</label><textarea id="message" name="message" class="form-control" rows="4" required></textarea></div>
+            <button class="btn btn-primary w-100">Gönder</button>
           </form>
         </div>
-        <div class="col-md-6 d-flex flex-column align-items-center justify-content-center">
-          <p class="mb-3">Alternatif olarak WhatsApp üzerinden de anında destek alabilirsiniz:</p>
-          <a href="https://wa.me/905316250694" target="_blank" class="btn btn-success"><i class="bi bi-whatsapp me-1"></i>WhatsApp</a>
-        </div>
+        <div class="col-md-6 d-flex justify-content-center align-items-center"><a href="https://wa.me/905316250694" target="_blank" class="btn btn-whatsapp btn-lg"><i class="bi bi-whatsapp me-2"></i>WhatsApp ile Hemen Yazın</a></div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p class="mb-0">&copy; 2025 NASA TEKNİK HİZMETLER</p>
-    </div>
-  </footer>
+  <footer><div class="container"><p class="mb-0">&copy; 2025 NASA TEKNİK HİZMETLER</p></div></footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.products .card').forEach((card, i) => {
+        card.style.opacity = 0;
+        setTimeout(() => { card.style.transition = 'opacity 0.6s ease-in-out'; card.style.opacity = 1; }, i * 200);
+      });
+    });
+  </script>
 </body>
 </html>
