@@ -16,14 +16,17 @@
     .card { border: none; box-shadow: 0 6px 12px rgba(0,0,0,0.1); border-radius: 20px; transition: transform 0.3s ease; }
     .card:hover { transform: scale(1.03); }
     footer { background-color: #1c3c72; color: #ffffff; text-align: center; padding: 40px 0; }
+    .whatsapp-btn { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
   </style>
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar py-4 sticky-top">
     <div class="container d-flex align-items-center">
-      <!-- Doğrudan PNG logo kullanılıyor -->
-      <img src="images/logo.png" alt="NASA Logo" class="logo me-3" loading="lazy" />
+      <picture>
+        <source srcset="images/logo.png" type="image/png">
+        <img src="images/logo.png" alt="NASA Logo" class="logo me-3" loading="lazy" width="300" height="100">
+      </picture>
       <h4 class="mb-0 fw-bold text-dark">NASA TEKNİK HİZMETLER</h4>
     </div>
   </nav>
@@ -33,61 +36,49 @@
     <div class="container">
       <h1 class="display-4 fw-bold mb-3">NASA TEKNİK HİZMETLER</h1>
       <p class="lead mb-4">Türkiye genelinde brülör ve otomasyon servis hizmeti</p>
-      <img src="images/hero.jpg" alt="Teknik Servis Görseli" class="img-fluid rounded" loading="lazy" width="1200" height="600" />
+      <img src="images/hero.jpg" alt="Teknik Servis Görseli" class="img-fluid rounded" loading="lazy" width="1200" height="600">
     </div>
   </section>
 
-  <!-- Hizmetlerimiz -->
+  <!-- Hizmetler -->
   <section class="bg-white">
     <div class="container">
       <h2 class="text-center section-title">Hizmetlerimiz</h2>
       <div class="row g-4">
         <div class="col-md-4">
           <div class="card p-4 text-center">
-            <img src="images/service1.jpg" alt="Brülör Servisi" class="img-fluid rounded mb-3" loading="lazy" width="400" height="250" />
+            <img src="images/service1.jpg" alt="Brülör Servisi" class="img-fluid rounded mb-3" loading="lazy" width="400" height="250">
             <h5>Brülör Servisi</h5>
             <p>Endüstriyel sistemler için periyodik bakım ve arıza giderme hizmeti.</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card p-4 text-center">
-            <img src="images/service2.jpg" alt="Yakma Kontrol Sistemleri" class="img-fluid rounded mb-3" loading="lazy" width="400" height="250" />
+            <img src="images/service2.jpg" alt="Yakma Kontrol Sistemleri" class="img-fluid rounded mb-3" loading="lazy" width="400" height="250">
             <h5>Yakma Kontrol Sistemleri</h5>
             <p>Emniyet röleleri ve kontrol sistemlerinde kurulum ve destek.</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card p-4 text-center">
-            <img src="images/service3.jpg" alt="Otomasyon Çözümleri" class="img-fluid rounded mb-3" loading="lazy" width="400" height="250" />
+            <img src="images/service3.jpg" alt="Otomasyon Çözümleri" class="img-fluid rounded mb-3" loading="lazy" width="400" height="250">
             <h5>Otomasyon Çözümleri</h5>
-            <p>PLC, HMI ve Modbus tabanlı otomasyon çözümleriyle üretiminizi yönetin.</p>
+            <p>PLC, HMI ve modbus tabanlı otomasyon çözümleriyle üretiminizi yönetin.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Ürünlerimiz -->
+  <!-- Ürünler -->
   <section class="bg-light">
     <div class="container">
       <h2 class="text-center section-title">Ürünlerimiz</h2>
-      <div class="row g-4 text-center">
-        <div class="col-6 col-md-3">
-          <img src="images/product1.jpg" alt="Gaz Valfleri" class="img-fluid rounded mb-2" loading="lazy" width="300" height="200" />
-          <h6>Gaz Valfleri</h6>
-        </div>
-        <div class="col-6 col-md-3">
-          <img src="images/product2.jpg" alt="Alev Dedektörleri" class="img-fluid rounded mb-2" loading="lazy" width="300" height="200" />
-          <h6>Alev Dedektörleri</h6>
-        </div>
-        <div class="col-6 col-md-3">
-          <img src="images/product3.jpg" alt="Otomasyon Modülleri" class="img-fluid rounded mb-2" loading="lazy" width="300" height="200" />
-          <h6>Otomasyon Modülleri</h6>
-        </div>
-        <div class="col-6 col-md-3">
-          <img src="images/product4.jpg" alt="Yedek Parçalar" class="img-fluid rounded mb-2" loading="lazy" width="300" height="200" />
-          <h6>Yedek Parçalar</h6>
-        </div>
+      <div class="row g-4">
+        <div class="col-6 col-md-3"><div class="card p-3 text-center"><img src="images/product1.jpg" alt="Gaz Valfleri" class="img-fluid rounded mb-2" loading="lazy" width="300" height="200"><h6>Gaz Valfleri</h6></div></div>
+        <div class="col-6 col-md-3"><div class="card p-3 text-center"><img src="images/product2.jpg" alt="Alev Dedektörleri" class="img-fluid rounded mb-2" loading="lazy" width="300" height="200"><h6>Alev Dedektörleri</h6></div></div>
+        <div class="col-6 col-md-3"><div class="card p-3 text-center"><img src="images/product3.jpg" alt="Otomasyon" class="img-fluid rounded mb-2" loading="lazy" width="300" height="200"><h6>Otomasyon</h6></div></div>
+        <div class="col-6 col-md-3"><div class="card p-3 text-center"><img src="images/product4.jpg" alt="Yedek Parçalar" class="img-fluid rounded mb-2" loading="lazy" width="300" height="200"><h6>Yedek Parçalar</h6></div></div>
       </div>
     </div>
   </section>
@@ -95,26 +86,31 @@
   <!-- İletişim -->
   <section class="bg-white">
     <div class="container">
-      <h2 class="text-center section-title">İletişim</h2>
-      <div class="row justify-content-center">
+      <h2 class="text-center section-title">Bize Ulaşın</h2>
+      <div class="row">
         <div class="col-md-6">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item"><strong>Telefon:</strong> +90 5xx xxx xx xx</li>
-            <li class="list-group-item"><strong>E-posta:</strong> info@nasa-teknik.com</li>
-            <li class="list-group-item"><strong>Adres:</strong> İstanbul / Türkiye</li>
-          </ul>
+          <form action="https://formspree.io/f/mvgandne" method="POST" class="mx-auto" style="max-width:500px;">
+            <div class="mb-3"><label for="name" class="form-label">Adınız</label><input type="text" id="name" name="name" class="form-control" required></div>
+            <div class="mb-3"><label for="email" class="form-label">E-posta</label><input type="email" id="email" name="_replyto" class="form-control" required></div>
+            <div class="mb-3"><label for="message" class="form-label">Mesajınız</label><textarea id="message" name="message" rows="4" class="form-control" required></textarea></div>
+            <button type="submit" class="btn btn-primary w-100">Gönder</button>
+          </form>
+        </div>
+        <div class="col-md-6 d-flex flex-column align-items-center justify-content-center">
+          <p class="mb-3">Alternatif olarak WhatsApp üzerinden de anında destek alabilirsiniz:</p>
+          <a href="https://wa.me/905316250694" target="_blank" class="btn btn-success">WhatsApp İletişim</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p class="mb-0">&copy; 2025 NASA TEKNİK HİZMETLER. Tüm hakları saklıdır.</p>
-    </div>
-  </footer>
+  <!-- WhatsApp Köşe Butonu -->
+  <a href="https://wa.me/905316250694" target="_blank" class="whatsapp-btn">
+    <img src="images/logo.png" alt="WhatsApp" width="60" height="60" style="background:#25D366;border-radius:50%;padding:10px;">
+  </a>
 
+  <!-- Footer -->
+  <footer><div class="container"><p class="mb-0">&copy; 2025 NASA TEKNİK HİZMETLER. Tüm hakları saklıdır.</p></div></footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
