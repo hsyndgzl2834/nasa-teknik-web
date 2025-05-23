@@ -18,17 +18,19 @@
     .hero-content { position: relative; color: white; text-align: center; z-index: 2; }
     .hero-content h1 { font-size: 4rem; font-weight: 700; }
     .hero-content p { font-size: 1.25rem; margin-bottom: 2rem; }
-    .services, .products { padding: 80px 0; }
-    .services .card, .products .card { border: none; border-radius: 1rem; overflow: hidden; position: relative; transition: transform 0.3s; }
-    .services .card:hover, .products .card:hover { transform: translateY(-10px); }
-    .services .card img, .products .card img { border-radius: 1rem 1rem 0 0; }
-    .services .card-body, .products .card-body { padding: 1.5rem; text-align: center; }
+    section { padding: 80px 0; }
+    .section-title { font-size: 2rem; font-weight: 600; margin-bottom: 40px; color: #1c3c72; }
+    .card { border: none; border-radius: 1rem; overflow: hidden; transition: transform 0.3s ease; }
+    .card:hover { transform: translateY(-8px); }
+    .card img { width: 100%; height: auto; display: block; border-radius: 1rem 1rem 0 0; }
+    .card-body { padding: 1.25rem; text-align: center; }
     .products { background-color: #e9ecef; }
     footer { background-color: #1c3c72; color: white; padding: 2rem 0; text-align: center; }
     @media (max-width: 768px) { .hero-content h1 { font-size: 2.5rem; } }
   </style>
 </head>
 <body>
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="#">
@@ -37,12 +39,13 @@
       </a>
       <div class="ms-auto">
         <a href="https://wa.me/905316250694" target="_blank" class="btn btn-whatsapp">
-          <i class="bi bi-whatsapp"></i> WhatsApp
+          <i class="bi bi-whatsapp me-1"></i>WhatsApp
         </a>
       </div>
     </div>
   </nav>
 
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -52,62 +55,72 @@
     </div>
   </section>
 
+  <!-- Hizmetler -->
   <section id="hizmetler" class="services">
     <div class="container">
-      <h2 class="text-center mb-5">Hizmetlerimiz</h2>
+      <h2 class="text-center section-title">Hizmetlerimiz</h2>
       <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card">
-            <img src="images/service1.jpg" alt="Brülör Servisi" class="img-fluid">
-            <div class="card-body">
-              <h5 class="card-title">Brülör Servisi</h5>
-              <p class="card-text">Periyodik bakım ve arıza giderme hizmeti.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img src="images/service2.jpg" alt="Yakma Kontrol Sistemleri" class="img-fluid">
-            <div class="card-body">
-              <h5 class="card-title">Yakma Kontrol Sistemleri</h5>
-              <p class="card-text">Emniyet röleleri ve kontrol sistemleri kurulumu.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img src="images/service3.jpg" alt="Otomasyon Çözümleri" class="img-fluid">
-            <div class="card-body">
-              <h5 class="card-title">Otomasyon Çözümleri</h5>
-              <p class="card-text">PLC, HMI ve modbus tabanlı uygulamalar.</p>
-            </div>
-          </div>
-        </div>
+        <div class="col-md-4"><div class="card"><img src="images/service1.jpg" alt="Brülör Servisi"><div class="card-body"><h5>Brülör Servisi</h5><p>Periyodik bakım ve arıza giderme hizmeti.</p></div></div></div>
+        <div class="col-md-4"><div class="card"><img src="images/service2.jpg" alt="Yakma Kontrol Sistemleri"><div class="card-body"><h5>Yakma Kontrol Sistemleri</h5><p>Emniyet röleleri ve kontrol sistemleri kurulumu.</p></div></div></div>
+        <div class="col-md-4"><div class="card"><img src="images/service3.jpg" alt="Otomasyon Çözümleri"><div class="card-body"><h5>Otomasyon Çözümleri</h5><p>PLC, HMI ve modbus tabanlı uygulamalar.</p></div></div></div>
       </div>
     </div>
   </section>
 
+  <!-- Brülör Modelleri -->
+  <section class="bg-white">
+    <div class="container">
+      <h2 class="text-center section-title">Brülör Modelleri</h2>
+      <div class="row g-4">
+        <div class="col-6 col-md-3"><div class="card"><img src="images/burner1.jpg" alt="Brülör Model A"><div class="card-body"><h6>Model A</h6></div></div></div>
+        <div class="col-6 col-md-3"><div class="card"><img src="images/burner2.jpg" alt="Brülör Model B"><div class="card-body"><h6>Model B</h6></div></div></div>
+        <div class="col-6 col-md-3"><div class="card"><img src="images/burner3.jpg" alt="Brülör Model C"><div class="card-body"><h6>Model C</h6></div></div></div>
+        <div class="col-6 col-md-3"><div class="card"><img src="images/burner4.jpg" alt="Brülör Model D"><div class="card-body"><h6>Model D</h6></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontrolör Modelleri -->
   <section class="products">
     <div class="container">
-      <h2 class="text-center mb-5">Ürünlerimiz</h2>
+      <h2 class="text-center section-title">Kontrolör Modelleri</h2>
       <div class="row g-4">
-        <div class="col-6 col-md-3"><div class="card"><img src="images/product1.jpg" class="img-fluid"><div class="card-body"><h6>Gaz Valfleri</h6></div></div></div>
-        <div class="col-6 col-md-3"><div class="card"><img src="images/product2.jpg" class="img-fluid"><div class="card-body"><h6>Alev Dedektörleri</h6></div></div></div>
-        <div class="col-6 col-md-3"><div class="card"><img src="images/product3.jpg" class="img-fluid"><div class="card-body"><h6>Otomasyon Modülleri</h6></div></div></div>
-        <div class="col-6 col-md-3"><div class="card"><img src="images/product4.jpg" class="img-fluid"><div class="card-body"><h6>Yedek Parçalar</h6></div></div></div>
+        <div class="col-6 col-md-3"><div class="card"><img src="images/controller1.jpg" alt="Kontrolör Model X"><div class="card-body"><h6>Model X</h6></div></div></div>
+        <div class="col-6 col-md-3"><div class="card"><img src="images/controller2.jpg" alt="Kontrolör Model Y"><div class="card-body"><h6>Model Y</h6></div></div></div>
+        <div class="col-6 col-md-3"><div class="card"><img src="images/controller3.jpg" alt="Kontrolör Model Z"><div class="card-body"><h6>Model Z</h6></div></div></div>
+        <div class="col-6 col-md-3"><div class="card"><img src="images/controller4.jpg" alt="Kontrolör Model W"><div class="card-body"><h6>Model W</h6></div></div></div>
       </div>
     </div>
   </section>
 
+  <!-- Teklif Formu -->
   <section class="bg-white">
     <div class="container py-5">
-      <h2 class="text-center mb-5">Bize Ulaşın</h2>
+      <h2 class="text-center section-title">Bakım Fiyat Teklifi Alın</h2>
+      <form action="https://formspree.io/f/mvgandne" method="POST" class="mx-auto" style="max-width:600px;">
+        <div class="row g-3">
+          <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="Adınız" required></div>
+          <div class="col-md-6"><input type="email" name="_replyto" class="form-control" placeholder="E-posta" required></div>
+          <div class="col-md-6"><input type="text" name="company" class="form-control" placeholder="Firma Adı"></div>
+          <div class="col-md-6"><input type="tel" name="phone" class="form-control" placeholder="Telefon Numarası"></div>
+          <div class="col-12"><select name="service" class="form-select" required><option value="">Hizmet Seçin</option><option>Brülör Servisi</option><option>Yakma Kontrol</option><option>Otomasyon Çözümleri</option></select></div>
+          <div class="col-12"><textarea name="message" rows="4" class="form-control" placeholder="Detaylı Mesajınız"></textarea></div>
+          <div class="col-12 text-center"><button type="submit" class="btn btn-primary px-5">Teklif Al</button></div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- İletişim -->
+  <section class="bg-white">
+    <div class="container py-5">
+      <h2 class="text-center section-title">Bize Ulaşın</h2>
       <div class="row g-4">
         <div class="col-md-6">
           <form action="https://formspree.io/f/mvgandne" method="POST" style="max-width:500px;">
-            <div class="mb-3"><label for="name" class="form-label">Adınız</label><input type="text" id="name" name="name" class="form-control" required></div>
-            <div class="mb-3"><label for="email" class="form-label">E-posta</label><input type="email" id="email" name="_replyto" class="form-control" required></div>
-            <div class="mb-3"><label for="message" class="form-label">Mesajınız</label><textarea id="message" name="message" class="form-control" rows="4" required></textarea></div>
+            <div class="mb-3"><label class="form-label" for="name2">Adınız</label><input id="name2" type="text" name="name" class="form-control" required></div>
+            <div class="mb-3"><label class="form-label" for="email2">E-posta</label><input id="email2" type="email" name="_replyto" class="form-control" required></div>
+            <div class="mb-3"><label class="form-label" for="message2">Mesajınız</label><textarea id="message2" name="message" class="form-control" rows="4" required></textarea></div>
             <button class="btn btn-primary w-100">Gönder</button>
           </form>
         </div>
@@ -116,6 +129,7 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <div class="container"><p class="mb-0">&copy; 2025 NASA TEKNİK HİZMETLER</p></div>
   </footer>
