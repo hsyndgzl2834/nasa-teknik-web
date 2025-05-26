@@ -404,7 +404,7 @@ footer {
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
-//* === FOOTER TEXT COLOR === */
+  /* === FOOTER TEXT COLOR === */
 footer .container p {
   color: #fff;          /* Koyu gri yaparak arka planda belirginleştir */
   /* alternatife olarak: color: #fff; */ /* Eğer koyu zemin varsa beyaz yapın */
