@@ -1,0 +1,677 @@
+/* === FONTLAR & DEĞİŞKENLER === */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  --font-base: 'Inter', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+  --color-text: #333;
+  --color-heading: #1c3c72;
+  --color-primary: #1c3c72;
+  --color-secondary: #2a5298;
+  --radius: 0.5rem;
+  --transition: 0.2s ease;
+}
+
+/* === RESET & TEMEL === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--font-base);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: #f5f5f5;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* === CONTAINER === */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === BAŞLIKLAR & METİN === */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-heading);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+p, li, label {
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+/* === NAVBAR & LOGO === */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+.logo {
+  flex-shrink: 0;
+}
+.logo img {
+  height: clamp(50px, 8vw, 80px);
+  width: auto;
+  object-fit: contain;
+  transition: transform var(--transition);
+}
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+/* === MENU === */
+.menu {
+  display: flex;
+  gap: 2rem;
+}
+.menu a {
+  font-weight: 500;
+  color: var(--color-text);
+  transition: color var(--transition);
+}
+.menu a:hover {
+  color: var(--color-heading);
+}
+
+/* Dil butonları */
+.lang-switcher {
+  display: flex;
+  gap: 0.5rem;
+}
+.lang-switcher button {
+  background: none;
+  border: 1px solid #ccc;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  transition: background var(--transition), border-color var(--transition);
+}
+.lang-switcher button.active,
+.lang-switcher button:hover {
+  background: var(--color-heading);
+  border-color: var(--color-heading);
+  color: #fff;
+}
+
+/* Hamburger - Mobil */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.nav-toggle span {
+  display: block;
+  height: 3px;
+  background: var(--color-text);
+  border-radius: 2px;
+}
+
+/* Mobil menü */
+@media(max-width: 768px) {
+  .nav-toggle { display: flex; }
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    display: none;
+  }
+  .menu.open { display: flex; }
+}
+
+/* === HERO SLIDER === */
+.hero-slider, .hero {
+  position: relative;
+  overflow: hidden;
+}
+.hero, .hero-slider .swiper-slide {
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+.hero-overlay, .hero-slider .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+.hero-content, .hero-slider .hero-overlay h1 {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+}
+.hero-content h1 {
+  font-size: clamp(2rem,5vw,3rem);
+  margin-bottom: 1rem;
+}
+.hero-content p {
+  font-size: clamp(1rem,3vw,1.25rem);
+  margin-bottom: 1.5rem;
+}
+.hero-btn {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  transition: transform var(--transition), opacity var(--transition);
+}
+.hero-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* Swiper buton ve pagination */
+.swiper-button-prev, .swiper-button-next {
+  color: #fff;
+}
+.swiper-pagination-bullet {
+  background: #fff;
+  opacity: 0.7;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+/* === SECTIONS === */
+.section {
+  padding: 4rem 0;
+}
+.section.alt {
+  background: #fff;
+}
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* === KARTLAR === */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+  gap: 2rem;
+}
+.card, .link-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform var(--transition), box-shadow var(--transition);
+  text-align: center;
+}
+.card:hover, .link-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* === BUTONLAR === */
+.btn {
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-family: var(--font-base);
+}
+.btn.primary {
+  background: linear-gradient(135deg,var(--color-primary),var(--color-secondary));
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform var(--transition), opacity var(--transition);
+}
+.btn.primary:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* View all butonu */
+.btn-view-all {
+  margin-top: 1rem;
+}
+
+/* === İLETİŞİM BUTONLARI === */
+.contact-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+.whatsapp-btn {
+  background: #25D366;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform var(--transition), opacity var(--transition);
+}
+.whatsapp-btn i {
+  font-size: 1.25rem;
+}
+.whatsapp-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* İletişim bilgi satırları */
+.contact-info p {
+  margin-bottom: 0.5rem;
+}
+.contact-info a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* === FOOTER === */
+footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* === SABİT WHATSAPP ICON === */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: #fff;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: transform var(--transition);
+}
+.whatsapp-float:hover {
+  transform: translateY(-3px);
+}
+
+/* === RESPONSIVE FINE-TUNING === */
+@media(max-width: 768px) {
+  .hero { height: 50vh; }
+  .hero-btn { width: 100%; justify-content: center; }
+}
+/* === LAYOUT & CENTERING ADJUSTMENTS === */
+
+/* Container’ları her zaman ortala */
+.container {
+  max-width: 1200px;
+  margin: 0 auto !important;
+  padding: 0 1rem;
+}
+
+/* Her section’ı içeriği ortalayacak şekilde düzenle */
+.section, .section.alt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Card grid’de kartları ortala */
+.card-grid {
+  justify-items: center; /* grid ile */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Hero içeriğini ortala */
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* Navbar içeriğini genişlik boyunca yay */
+.nav-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Section başlıklarına dekoratif alt çizgi */
+.section-title {
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+.section-title::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: var(--color-primary);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* Kartlara hafif hover efekti ve padding */
+.card, .link-card {
+  padding: 1.5rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.card:hover, .link-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Footer metnini de ortala */
+footer .container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .hero { height: 50vh; }
+  .nav-toggle { display: flex; }
+  .menu { width: 100%; }
+}
+/* ==== HERO SLIDER METİN ORTALAMA ==== */
+.hero-slider .swiper-slide {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-slider .hero-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.hero-slider .hero-overlay h1 {
+  margin: 0;
+  padding: 0 1rem;
+  font-size: clamp(1.8rem,5vw,2.5rem);
+  line-height: 1.2;
+}
+
+/* ==== İLETİŞİM SAYFASI DÜZENLEME ==== */
+.contact-info,
+.form {
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  padding: 0 1rem;
+}
+.contact-info p {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  text-align: left;
+}
+.form input,
+.form select,
+.form textarea {
+  max-width: 100%;
+}
+.contact-actions {
+  flex-wrap: wrap;
+}
+.contact-actions .btn {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+/* Mobilde dar ekranda biraz boşluk */
+@media (max-width: 480px) {
+  .hero-slider .hero-overlay h1 {
+    font-size: 1.5rem;
+  }
+  .contact-info,
+  .form {
+    padding: 0 0.5rem;
+  }
+}
+/* === CONTACT SAYFASI === */
+#contact .section-title {
+  margin-bottom: 2rem;
+}
+
+/* İki sütunlu düzen */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Sabit iletişim bilgileri kutusu */
+.contact-info {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.contact-info p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.contact-info i {
+  color: var(--color-primary);
+}
+.contact-info a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Form bölümü */
+.contact-form {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.contact-form .form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+@media (max-width: 768px) {
+  .contact-form .form-row {
+    flex-direction: column;
+  }
+}
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  border: 1px solid #ddd;
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  width: 100%;
+  transition: border-color var(--transition);
+}
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+/* Buton grubu */
+.contact-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.contact-actions .btn {
+  flex: 1 1 auto;
+  justify-content: center;
+}
+
+/* WhatsApp butonu */
+.whatsapp-btn {
+  background: #25D366;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform var(--transition), opacity var(--transition);
+}
+.whatsapp-btn i {
+  font-size: 1.25rem;
+}
+.whatsapp-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* Arkaplan rengi ve padding */
+.section.alt#contact {
+  background: #f9f9f9;
+  padding: 4rem 0;
+}
+/* === CONTACT SAYFASI ORTALAMA VE STİL === */
+.logo.mx-auto { display: block; margin: 1rem auto; }
+
+/* İki sütun -> tek sütun dönüşümü */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .contact-container { grid-template-columns: 1fr; }
+}
+
+/* Ana sayfaya dön butonu */
+.text-center .btn.primary { display: inline-flex; align-items:center; gap:0.5rem; }
+
+/* Sabit iletişim kutusu */
+.contact-info {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.contact-info p { display:flex; align-items:center; gap:0.5rem; font-size:1rem; margin-bottom:1rem; }
+.contact-info i { color: var(--color-primary); }
+.contact-info a { color: var(--color-primary); text-decoration:none; }
+.contact-info a:hover { text-decoration:underline; }
+
+/* Form kutusu */
+.contact-form {
+  background:#fff;
+  padding:1.5rem;
+  border-radius:var(--radius);
+  box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
+.contact-form .form-row { display:flex; gap:1rem; margin-bottom:1rem; }
+@media (max-width:768px) {
+  .contact-form .form-row { flex-direction:column; }
+}
+
+/* Form elemanları */
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width:100%;
+  padding:0.75rem 1rem;
+  border:1px solid #ddd;
+  border-radius:var(--radius);
+  transition:border-color var(--transition);
+}
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color:var(--color-primary);
+  outline:none;
+}
+
+/* Buton grubu */
+.contact-actions {
+  display:flex;
+  gap:1rem;
+  margin-top:1.5rem;
+}
+.contact-actions .btn { flex:1; justify-content:center; }
+
+/* WhatsApp butonu */
+.whatsapp-btn {
+  background:#25D366;
+  color:#fff;
+  padding:0.75rem 1.25rem;
+  border-radius:var(--radius);
+  display:inline-flex;
+  align-items:center;
+  gap:0.5rem;
+  transition:transform var(--transition),opacity var(--transition);
+}
+.whatsapp-btn:hover { transform:translateY(-2px); opacity:0.9; }
+
+/* Form section arkaplan & padding */
+.section.alt#contact {
+  background:#f9f9f9;
+  padding:4rem 0;
+}
+/* ==== DİL SEÇİCİ BOŞLUK EKLEME ==== */
+.navbar .lang-switcher {
+  margin-left: 2rem;    /* Menü ile dil butonları arasına boşluk */
+  display: flex;
+  gap: 0.5rem;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-i18n="contactNav">İletişim</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script src="js/lang.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-wrapper">
+      <!-- Logo ortalandı -->
+      <a href="index.html" class="logo mx-auto">
+        <img src="images/logo.png" alt="NASA Teknik Hizmetler"/>
+      </a>
+    </div>
+  </header>
+
+  <main class="section alt" id="contact">
+    <div class="container">
+      <h2 class="section-title" data-i18n="contactNav">İletişim</h2>
+      <!-- Ana sayfaya dönüş -->
+      <div class="text-center mb-4">
+        <a href="index.html" class="btn primary">
+          <i class="fas fa-home"></i> Ana Sayfaya Dön
+        </a>
+      </div>
+
+      <div class="contact-container">
+        <div class="contact-info">
+          <p><i class="fas fa-envelope"></i>
+            <strong>Email:</strong>
+            <a href="mailto:adiguzelhuseyin@outlook.com">adiguzelhuseyin@outlook.com</a>
+          </p>
+          <p><i class="fas fa-phone"></i>
+            <strong>Telefon:</strong>
+            <a href="tel:+905316250694">+90 531 625 0694</a>
+          </p>
+        </div>
+
+        <form class="contact-form" action="https://formspree.io/f/mvgandne" method="POST">
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Adınız" data-i18n-placeholder="formName" required/>
+            <input type="email" name="_replyto" placeholder="E-posta" data-i18n-placeholder="formEmail" required/>
+          </div>
+          <div class="form-row">
+            <input type="tel" name="phone" placeholder="Telefon" data-i18n-placeholder="formPhone"/>
+            <select name="service" data-i18n-placeholder="formServicePlaceholder">
+              <option value="" disabled selected data-i18n="formServicePlaceholder"></option>
+              <option value="maintenance" data-i18n="formServiceMaintenance"></option>
+              <option value="burner" data-i18n="formServiceBurner"></option>
+              <option value="automation" data-i18n="formServiceAutomation"></option>
+            </select>
+          </div>
+          <textarea name="message" rows="4" placeholder="Mesajınız" data-i18n-placeholder="formMessage"></textarea>
+          <input type="hidden" name="_subject" value="Yeni İletişim Formu Mesajı"/>
+
+          <div class="contact-actions">
+            <button type="submit" class="btn primary" data-i18n="formSubmit" data-i18n-value="formSubmit">
+              Gönder
+            </button>
+            <a href="https://wa.me/905316250694" class="btn whatsapp-btn" target="_blank" aria-label="WhatsApp" data-i18n="whatsappContact">
+              <i class="fab fa-whatsapp"></i> WhatsApp ile İletişime Geç
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

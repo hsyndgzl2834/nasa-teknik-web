@@ -1,144 +1,186 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NASA TEKNİK HİZMETLER</title>
-  <!-- Styles -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
-  <style>
-    body { font-family: 'Inter', sans-serif; background: #f8f9fa; margin: 0; }
-    .navbar { background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .navbar-brand { display: flex; align-items: center; }
-    .logo { height: 48px; border-radius: 50%; border: 2px solid #1c3c72; }
-    .btn-whatsapp { background: #25D366; color: #fff; }
-    .hero { position: relative; height: 70vh; background: url('images/hero.webp') center/cover no-repeat; display: flex; align-items: center; justify-content: center; }
-    .hero-overlay { position: absolute; inset: 0; background: rgba(28,60,114,0.6); }
-    .hero-content { position: relative; z-index: 1; color: #fff; text-align: center; }
-    .hero-content h1 { font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .hero-content p { font-size: 1.1rem; margin-bottom: 1rem; }
-    .hero-content .btn-lg { padding: 0.75rem 2rem; border-width: 2px; }
-    section { padding: 4rem 0; }
-    .section-title { color: #1c3c72; font-size: 1.75rem; font-weight: 600; margin-bottom: 2rem; }
-    .card { border: none; border-radius: 1rem; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
-    .card img { width: 100%; height: auto; display: block; }
-    .card-body { padding: 1rem; text-align: center; }
-    .carousel-item { transition: transform 0.6s ease, opacity 0.6s ease; }
-    .info-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 1.5rem; }
-    .info-card { background: #fff; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 4px 8px rgba(0,0,0,0.05); text-align: center; }
-    .info-card h5 { margin-top: 1rem; font-size: 1.1rem; }
-    .info-card p { font-size: 0.9rem; color: #555; }
-    footer { background: #1c3c72; color: #fff; padding: 2rem 0; text-align: center; font-size: 0.9rem; }
-    @media (max-width: 768px) { .hero-content h1 { font-size: 2.2rem; } }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-i18n="siteTitle">NASA Teknik Hizmetler</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+
+  <!-- Lang JS -->
+  <script src="js/lang.js" defer></script>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="images/logo.png" alt="Logo" class="logo me-2" loading="lazy">
-        <span class="fw-bold text-dark">NASA TEKNİK HİZMETLER</span>
+  <!-- HEADER -->
+  <header class="navbar">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo mx-auto" data-i18n-title="logoTitle">
+        <img src="images/logo.png" data-i18n-alt="logoAlt" alt="NASA Teknik Hizmetler"/>
       </a>
-      <div class="ms-auto">
-        <a href="https://wa.me/905316250694" class="btn btn-whatsapp" target="_blank">WhatsApp</a>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <nav class="menu">
+        <a href="#services" data-i18n="servicesTitle">Hizmetlerimiz</a>
+        <a href="#burner-types" data-i18n="burnerTypesTitle">Brülör Tipleri</a>
+        <a href="#combustion-control-types" data-i18n="combustionControlTitle">Yakma Kontrol Tipleri</a>
+        <a href="#products-preview" data-i18n="productsTitle">Ürünler</a>
+        <a href="about.html" data-i18n="aboutTitle">Hakkımızda</a>
+        <a href="faq.html" data-i18n="faqTitle">SSS</a>
+        <a href="contact.html" data-i18n="contactNav">İletişim</a>
+      </nav>
+      <div class="lang-switcher">
+        <button onclick="setLanguage('tr')" class="active" data-i18n-title="langTRTitle">TR</button>
+        <button onclick="setLanguage('en')" data-i18n-title="langENTitle">EN</button>
       </div>
     </div>
-  </nav>
+  </header>
 
-  <section class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content container">
-      <h1>Endüstriyel Yakma ve Kontrol Hizmetleri</h1>
-      <p>Brülör bakımı, servis ve otomasyon çözümlerinde uzman kadromuzla yanınızdayız.</p>
-      <a href="#hizmetler" class="btn btn-outline-light btn-lg">Hizmetlerimize Göz At</a>
+  <!-- HERO SLIDER -->
+  <section class="hero-slider">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background:url('images/hero1.jpg') center/cover no-repeat;">
+          <div class="hero-overlay">
+            <h1 data-i18n="heroTitle"></h1>
+          </div>
+        </div>
+        <div class="swiper-slide" style="background:url('images/hero2.jpg') center/cover no-repeat;">
+          <div class="hero-overlay">
+            <h1 data-i18n="heroSubtitle"></h1>
+          </div>
+        </div>
+        <div class="swiper-slide" style="background:url('images/hero3.jpg') center/cover no-repeat;">
+          <div class="hero-overlay">
+            <h1 data-i18n="quoteText"></h1>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
   </section>
 
-  <section id="hizmetler">
+  <!-- SERVICES -->
+  <section id="services" class="section">
     <div class="container">
-      <h2 class="section-title text-center">Hizmetlerimiz</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card">
-            <img src="images/service1.webp" alt="Brülör Bakımı" loading="lazy">
-            <div class="card-body">
-              <h5>Brülör Bakımı ve Servisi</h5>
-              <p>Periyodik kontrollerle güvenilir ve verimli brülör performansı.</p>
-            </div>
-          </div>
+      <h2 class="section-title" data-i18n="servicesTitle"></h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3 data-i18n="card1Title"></h3>
+          <p data-i18n="card1Desc"></p>
         </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img src="images/service2.webp" alt="Yakma Kontrol" loading="lazy">
-            <div class="card-body">
-              <h5>Yakma Kontrol Sistemleri</h5>
-              <p>Emniyet kapama valfleri ve multiblok çözümleriyle tam kontrol.</p>
-            </div>
-          </div>
+        <div class="card">
+          <h3 data-i18n="card2Title"></h3>
+          <p data-i18n="card2Desc"></p>
         </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img src="images/service3.webp" alt="Otomasyon Çözümleri" loading="lazy">
-            <div class="card-body">
-              <h5>Otomasyon Entegrasyonu</h5>
-              <p>PLC, HMI ve Modbus tabanlı sistemlerle üretimi dijitalleştirin.</p>
-            </div>
-          </div>
+        <div class="card">
+          <h3 data-i18n="card3Title"></h3>
+          <p data-i18n="card3Desc"></p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="container py-5">
-    <h2 class="section-title text-center">Brülör & Kontrolör Modelleri</h2>
-    <div id="modelsCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="d-flex justify-content-center gap-3">
-            <div class="card" style="width: 18rem;"><img src="images/burner1.webp" class="card-img-top"><div class="card-body"><h6 class="card-title">Model A</h6></div></div>
-            <div class="card" style="width: 18rem;"><img src="images/burner2.webp" class="card-img-top"><div class="card-body"><h6 class="card-title">Model B</h6></div></div>
-          </div>
+  <!-- BURNER TYPES -->
+  <section id="burner-types" class="section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="burnerTypesTitle"></h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3 data-i18n="brn1Title"></h3>
+          <p data-i18n="brn1Desc"></p>
         </div>
-        <div class="carousel-item">
-          <div class="d-flex justify-content-center gap-3">
-            <div class="card" style="width: 18rem;"><img src="images/burner3.webp" class="card-img-top"><div class="card-body"><h6 class="card-title">Model C</h6></div></div>
-            <div class="card" style="width: 18rem;"><img src="images/burner4.webp" class="card-img-top"><div class="card-body"><h6 class="card-title">Model D</h6></div></div>
-          </div>
+        <div class="card">
+          <h3 data-i18n="brn2Title"></h3>
+          <p data-i18n="brn2Desc"></p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="brn3Title"></h3>
+          <p data-i18n="brn3Desc"></p>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#modelsCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Önceki</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#modelsCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Sonraki</span>
-      </button>
     </div>
   </section>
 
-  <section class="bg-white">
-    <div class="container py-5">
-      <h2 class="section-title text-center">Fiyat Teklifi Alın</h2>
-      <form action="https://formspree.io/f/mvgandne" method="POST" class="mx-auto" style="max-width:600px;">
-        <div class="row g-3">
-          <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="Adınız" required></div>
-          <div class="col-md-6"><input type="email" name="_replyto" class="form-control" placeholder="E-posta" required></div>
-          <div class="col-md-6"><input type="tel" name="phone" class="form-control" placeholder="Telefon Numarası"></div>
-          <div class="col-md-6"><select name="service" class="form-select" required><option value="">Hizmet Seçin</option><option>Periyodik Bakım</option><option>Brülör Bakımı ve Servisi</option><option>Otomasyon Çözümü</option></select></div>
-          <div class="col-12"><textarea name="message" rows="4" class="form-control" placeholder="Mesajınız"></textarea></div>
-          <div class="col-12 text-center"><button type="submit" class="btn btn-primary px-5">Teklif Alın</button></div>
+  <!-- COMBUSTION CONTROL TYPES -->
+  <section id="combustion-control-types" class="section alt">
+    <div class="container">
+      <h2 class="section-title" data-i18n="combustionControlTitle"></h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3 data-i18n="ctl1Title"></h3>
+          <p data-i18n="ctl1Desc"></p>
         </div>
-      </form>
+        <div class="card">
+          <h3 data-i18n="ctl2Title"></h3>
+          <p data-i18n="ctl2Desc"></p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="ctl3Title"></h3>
+          <p data-i18n="ctl3Desc"></p>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- PRODUCTS PREVIEW -->
+  <section id="products-preview" class="section alt">
+    <div class="container">
+      <h2 class="section-title" data-i18n="productsTitle"></h2>
+      <div class="card-grid">
+        <a href="product1.html" class="card link-card"><h3 data-i18n="prd1Title"></h3></a>
+        <a href="product2.html" class="card link-card"><h3 data-i18n="prd2Title"></h3></a>
+        <a href="product3.html" class="card link-card"><h3 data-i18n="prd3Title"></h3></a>
+        <a href="product4.html" class="card link-card"><h3 data-i18n="prd4Title"></h3></a>
+      </div>
+      <div class="text-center">
+        <a href="products.html" class="btn primary btn-view-all" data-i18n="viewAllProducts"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <div class="container"><p class="mb-0">&copy; 2025 NASA TEKNİK HİZMETLER</p></div>
+    <div class="container text-center">
+      <p data-i18n="footerText"></p>
+    </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/905316250694" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Swiper JS & Initialization -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', () => {
+      document.querySelector('.menu').classList.toggle('open');
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      new Swiper('.swiper', {
+        loop: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      });
+    });
+  </script>
 </body>
 </html>
