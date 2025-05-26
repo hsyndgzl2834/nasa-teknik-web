@@ -72,13 +72,16 @@ p, li, label {
   flex-shrink: 0;
 }
 .logo img {
-  height: clamp(50px, 8vw, 80px);
-  width: auto;
-  object-fit: contain;
-  transition: transform var(--transition);
+  border-radius: 50%;       /* Tam oval */
+  object-fit: cover;        /* Fotoğrafı kutuya sığdırır */
+  overflow: hidden;         /* Taşmayı engeller */
+  height: clamp(50px, 8vw, 100px);
+  width: clamp(50px, 8vw, 100px);
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 .logo img:hover {
   transform: scale(1.05);
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
 }
 
 /* === MENU === */
@@ -96,24 +99,21 @@ p, li, label {
 }
 
 /* Dil butonları */
-.lang-switcher {
-  display: flex;
-  gap: 0.5rem;
-}
+/* === DİL SWITCHER AKTİF DURUM === */
 .lang-switcher button {
   background: none;
-  border: 1px solid #ccc;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
   padding: 0.25rem 0.75rem;
   border-radius: var(--radius);
-  font-weight: 500;
-  transition: background var(--transition), border-color var(--transition);
+  transition: background 0.2s, color 0.2s;
 }
-.lang-switcher button.active,
-.lang-switcher button:hover {
-  background: var(--color-heading);
-  border-color: var(--color-heading);
+
+.lang-switcher button.active {
+  background: var(--color-primary);
   color: #fff;
 }
+
 
 /* Hamburger - Mobil */
 .nav-toggle {

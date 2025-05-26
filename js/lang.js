@@ -168,9 +168,19 @@ const translations = {
 };
 
 function setLanguage(lang) {
-  localStorage.setItem("lang", lang);
-  applyLang(lang);
+    localStorage.setItem("lang", lang);
+    applyLang(lang);
+
+    // Yeni: butonların aktifliği toggle ediliyor
+    document.querySelectorAll(".lang-switcher button").forEach(btn => {
+      if (btn.getAttribute("data-lang") === lang) {
+        btn.classList.add("active");
+      } else {
+        btn.classList.remove("active");
+      }
+    });
 }
+
 
 function applyLang(lang) {
   // Metin içerikleri
