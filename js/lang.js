@@ -167,60 +167,74 @@ const translations = {
   }
 };
 
-function setLanguage(lang) {
-    localStorage.setItem("lang", lang);
-    applyLang(lang);
-
-    // Yeni: butonların aktifliği toggle ediliyor
-    document.querySelectorAll(".lang-switcher button").forEach(btn => {
-      if (btn.getAttribute("data-lang") === lang) {
-        btn.classList.add("active");
-      } else {
-        btn.classList.remove("active");
-      }
-    });
+// Butonların active durumunu güncelleyen yardımcı
+function updateActiveLangButtons(lang) {
+  document.querySelectorAll(".lang-switcher button").forEach(btn => {
+    btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
+  });
 }
 
+// Dil seçimi fonksiyonu
+function setLanguage(lang) {
+  localStorage.setItem("lang", lang);
+  applyLang(lang);
+  updateActiveLangButtons(lang);
+}
 
+// DOM’dan sayfa yüklendiğinde çalışacaklar
+document.addEventListener("DOMContentLoaded", () => {
+  // Önce butonlara data-lang attribute’u üzerinden listener ekleyelim
+  document.querySelectorAll(".lang-switcher button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      setLanguage(btn.getAttribute("data-lang"));
+    });
+  });
+
+  // Seçili dil varsa yükle, yoksa tr
+  const storedLang = localStorage.getItem("lang") || "tr";
+  applyLang(storedLang);
+  updateActiveLangButtons(storedLang);
+});
+
+// Metinleri ve öznitelikleri çeviren fonksiyon
 function applyLang(lang) {
-  // Metin içerikleri
+  // data-i18n
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
     const txt = translations[lang][key];
     if (!txt) return;
-    if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") el.value = txt;
-    else el.textContent = txt;
+    if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+      el.value = txt;
+    } else {
+      el.textContent = txt;
+    }
   });
 
-  // Placeholder'lar
+  // data-i18n-placeholder
   document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
     const key = el.getAttribute("data-i18n-placeholder");
     const txt = translations[lang][key];
     if (txt) el.placeholder = txt;
   });
 
-  // Alt metinler
+  // data-i18n-alt
   document.querySelectorAll("[data-i18n-alt]").forEach(el => {
     const key = el.getAttribute("data-i18n-alt");
     const txt = translations[lang][key];
     if (txt) el.alt = txt;
   });
 
-  // Title öznitelikleri
+  // data-i18n-title
   document.querySelectorAll("[data-i18n-title]").forEach(el => {
     const key = el.getAttribute("data-i18n-title");
     const txt = translations[lang][key];
     if (txt) el.title = txt;
   });
 
-  // Value öznitelikleri (submit butonları vb.)
+  // data-i18n-value
   document.querySelectorAll("[data-i18n-value]").forEach(el => {
     const key = el.getAttribute("data-i18n-value");
     const txt = translations[lang][key];
     if (txt) el.value = txt;
   });
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  applyLang(localStorage.getItem("lang") || "tr");
-});
