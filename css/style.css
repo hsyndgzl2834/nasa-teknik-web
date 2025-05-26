@@ -404,10 +404,13 @@ footer {
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
-/* Footer metnini de ortala */
-footer .container {
-  display: flex;
-  justify-content: center;
+//* === FOOTER TEXT COLOR === */
+footer .container p {
+  color: #fff;          /* Koyu gri yaparak arka planda belirginleştir */
+  /* alternatife olarak: color: #fff; */ /* Eğer koyu zemin varsa beyaz yapın */
+  font-size: 0.875rem;
+  margin: 0;
+  padding: 1rem 0;
 }
 
 /* Responsive tweaks */
