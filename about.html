@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title data-i18n="aboutTitle">Hakkımızda</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap&family=Poppins:wght@400;600;700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/style.css">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css" />
   <!-- Lang JS -->
   <script src="js/lang.js" defer></script>
 </head>
-<body class="flex flex-col min-h-screen bg-gray-50 text-gray-800">
+<body class="flex flex-col min-h-screen bg-gray-50 text-gray-800 font-sans">
 
   <!-- HEADER -->
   <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="index.html" class="flex items-center space-x-2">
+      <a href="index.html" class="flex items-center">
         <img src="images/logo.png" alt="NASA Teknik Hizmetler" class="h-10 w-auto rounded-full border-2 border-gray-200 shadow-lg" />
-        <span class="text-xl sm:text-2xl font-semibold text-gray-800" data-i18n="siteTitle">NASA Teknik Hizmetler</span>
       </a>
-      <nav class="hidden md:flex space-x-6 text-gray-700">
-        <a href="index.html" class="hover:text-indigo-600" data-i18n="home">Ana Sayfa</a>
-        <a href="#about" class="hover:text-indigo-600" data-i18n="aboutTitle">Hakkımızda</a>
-        <a href="contact.html" class="hover:text-indigo-600" data-i18n="contactNav">İletişim</a>
+      <nav class="hidden md:flex space-x-8 text-gray-700 uppercase tracking-wide">
+        <a href="index.html" class="font-medium hover:text-indigo-600 transition" data-i18n="home">Ana Sayfa</a>
+        <a href="contact.html" class="font-medium hover:text-indigo-600 transition" data-i18n="contactNav">İletişim</a>
       </nav>
       <button class="md:hidden text-gray-600 focus:outline-none" onclick="document.getElementById('mobile-nav').classList.toggle('hidden')">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -35,42 +33,68 @@
       </button>
     </div>
     <nav id="mobile-nav" class="md:hidden hidden bg-white border-t">
-      <a href="index.html" class="block px-6 py-3 hover:bg-gray-100" data-i18n="home">Ana Sayfa</a>
-      <a href="#about" class="block px-6 py-3 hover:bg-gray-100" data-i18n="aboutTitle">Hakkımızda</a>
-      <a href="contact.html" class="block px-6 py-3 hover:bg-gray-100" data-i18n="contactNav">İletişim</a>
+      <a href="index.html" class="block px-6 py-3 hover:bg-gray-100 font-medium" data-i18n="home">Ana Sayfa</a>
+      <a href="#about" class="block px-6 py-3 hover:bg-gray-100 font-medium" data-i18n="aboutTitle">Hakkımızda</a>
+      <a href="contact.html" class="block px-6 py-3 hover:bg-gray-100 font-medium" data-i18n="contactNav">İletişim</a>
     </nav>
   </header>
 
   <!-- About Section -->
   <main class="flex-grow">
     <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-      <div class="max-w-3xl mx-auto text-center">
-        <h1 class="text-4xl sm:text-5xl font-bold mb-4" data-i18n="aboutTitle">Hakkımızda</h1>
-        <div class="w-24 h-1 bg-indigo-600 mx-auto mb-8 rounded"></div>
-        <p class="text-lg sm:text-xl leading-relaxed mb-10" data-i18n="aboutText">
-          NASA Teknik Hizmetler, 20 yılı aşkın sektörel deneyimiyle endüstriyel yakma sistemlerinde lider çözüm ortağınızdır.
+    <div class="container mx-auto max-w-3xl space-y-8">
+      <!-- Başlık ve Firma Tanıtımı -->
+      <div class="text-center space-y-4">
+        <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">
+          NASA TEKNİK HİZMETLER
+        </h1>
+        <p class="text-base sm:text-lg text-gray-700 leading-relaxed">
+          Endüstriyel brülör sistemlerinde güvenilir çözüm ortağınız.
         </p>
-        <div class="space-y-12">
-          <div>
-            <h2 class="text-2xl sm:text-3xl font-semibold mb-2" data-i18n="missionTitle">Misyonumuz</h2>
-            <p class="text-base sm:text-lg leading-relaxed" data-i18n="missionText">
-              Güvenlik, verimlilik ve dijital dönüşümde öncü olmak.
-            </p>
-          </div>
-          <div>
-            <h2 class="text-2xl sm:text-3xl font-semibold mb-2" data-i18n="visionTitle">Vizyonumuz</h2>
-            <p class="text-base sm:text-lg leading-relaxed" data-i18n="visionText">
-              Küresel ölçekte referans marka haline gelmek.
-            </p>
-          </div>
+        <p class="text-base sm:text-lg text-gray-700 leading-relaxed">
+          İstanbul merkezli olarak tüm Türkiye’ye hizmet veren NASA Teknik Hizmetler, sanayi tesislerine yönelik brülör sistemleri ve otomasyon çözümlerinde uzmanlaşmış bir teknik servis firmasıdır. Deneyimli mühendis kadromuz ile kurulum, devreye alma, periyodik bakım, arıza tespiti ve yedek parça temini konularında müşterilerimize yüksek kalite standartlarında hizmet sunuyoruz.
+        </p>
+      </div>
+      <!-- Misyon -->
+      <div class="space-y-8">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900 flex items-center gap-2">
+            🔧 Misyonumuz
+          </h2>
+          <p class="text-base sm:text-lg text-gray-700 leading-relaxed">
+            Endüstriyel brülör ve yanma sistemleri alanında; hızlı, güvenilir ve sürdürülebilir teknik çözümler sunarak üretimde maksimum verimlilik sağlamak.
+          </p>
+        </div>
+        <!-- Vizyon -->
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900 flex items-center gap-2">
+            🚀 Vizyonumuz
+          </h2>
+          <p class="text-base sm:text-lg text-gray-700 leading-relaxed">
+            Türkiye'nin en güvenilir ve teknolojik altyapıya sahip brülör servis firması olarak, sektöre yön veren çözümler üretmek ve uluslararası platformda rekabet edebilir bir marka olmak.
+          </p>
+        </div>
+        <!-- Değerlerimiz -->
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900">
+            💼 Değerlerimiz
+          </h2>
+          <ul class="list-disc list-inside text-base sm:text-lg text-gray-700 leading-relaxed space-y-2">
+            <li>Müşteri Memnuniyeti</li>
+            <li>Hızlı ve Etkin Müdahale</li>
+            <li>Teknik Uzmanlık</li>
+            <li>Güvenilirlik ve Şeffaflık</li>
+            <li>Sürekli Gelişim</li>
+          </ul>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
   </main>
 
-  <!-- FOOTER (Consistent Across All Pages) -->
+  <!-- FOOTER -->
   <footer class="bg-gray-800 text-gray-200 py-6">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="container mx-auto px-6 text-center">
       <p data-i18n="footerText">© 2025 NASA TEKNİK HİZMETLER. Tüm hakları saklıdır.</p>
     </div>
   </footer>
