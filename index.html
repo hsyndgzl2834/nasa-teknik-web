@@ -21,11 +21,9 @@
   <header class="navbar">
     <div class="container nav-wrapper">
       <!-- Logo -->
-      <div class="logo-container">
-        <a href="index.html" class="logo" data-i18n-title="logoTitle">
-          <img src="images/logo.png" data-i18n-alt="logoAlt" alt="NASA Teknik Hizmetler"/>
-        </a>
-      </div>
+      <a href="index.html" class="logo" data-i18n-title="logoTitle">
+        <img src="images/logo.png" data-i18n-alt="logoAlt" alt="NASA Teknik Hizmetler"/>
+      </a>
 
       <!-- Mobil Menü Butonu -->
       <button class="nav-toggle" aria-label="Menu">
@@ -43,10 +41,10 @@
         <a href="contact.html" data-i18n="contactNav">İletişim</a>
       </nav>
 
-      <!-- Dil Seçici -->
+      <!-- Dil Seçici (SADECE index.html) -->
       <div class="lang-switcher">
-        <button data-lang="tr">TR</button>
-        <button data-lang="en">EN</button>
+        <button data-lang="tr" onclick="setLanguage('tr')">TR</button>
+        <button data-lang="en" onclick="setLanguage('en')">EN</button>
       </div>
     </div>
   </header>
@@ -182,6 +180,13 @@
         navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }
       });
     });
+
+    // Dil değiştirme fonksiyonu
+    function setLanguage(lang) {
+      const url = new URL(window.location);
+      url.searchParams.set('lang', lang);
+      window.location = url;
+    }
   </script>
 </body>
 </html>

@@ -104,12 +104,33 @@ p,li,label { margin-bottom:1rem; }
 }
 
 /* === HERO SLIDER === */
+/* === HERO SLIDER === */
 .hero-slider {
-  position:relative; overflow:hidden; height:60vh;
+  position: relative;
+  overflow: hidden;
+  height: 60vh;
+  .hero-slider .swiper,
+  .hero-slider .swiper-wrapper,
+  .hero-slider .swiper-slide {
+      height: 60vh !important;   /* tüm yapıyı aynı yükseklik yap */
+      min-height: 60vh !important; /* bazı tarayıcılarda gerekebiliyor */
+    }
+        .hero-slider .swiper-slide {
+      border: 2px dashed red !important;
+      }
 }
 .swiper-slide {
-  background-size:cover; background-position:center;
-  display:flex; align-items:center; justify-content:center;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* === SLIDER YÜKSEKLİK AYARI === */
+.hero-slider .swiper,
+.hero-slider .swiper-wrapper,
+.hero-slider .swiper-slide {
+  height: 100% !important;
 }
 .hero-overlay {
   position:absolute; inset:0;
@@ -226,4 +247,29 @@ footer {
 @media(max-width:768px) {
   .hero-slider { height:50vh; }
   .hero-overlay h1 { font-size:clamp(1.5rem,5vw,2.5rem); }
+}
+/* === MOBİLDE GÖRÜNÜRLÜK DÜZELTMELERİ === */
+@media (max-width: 768px) {
+  /* Tüm görseller responsive ve görünür */
+  img {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Başlıklar, metinler, kart içeriği vb. */
+  h1, h2, h3, h4, h5, h6,
+  p, a, .card h3, .card p,
+  .tag, .card-tag, .service-tag {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* Mobil menünün her koşulda açılması */
+  .menu {
+    display: flex !important;
+  }
 }
