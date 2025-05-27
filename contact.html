@@ -4,31 +4,56 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title data-i18n="contactNav">İletişim</title>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Ana stil dosyanız -->
   <link rel="stylesheet" href="css/style.css"/>
   <script src="js/lang.js" defer></script>
+
+  <!-- Bu sayfaya özel küçük ek stil -->
+  <style>
+    /* Butonu header içinde sağa yaslayalım */
+    .navbar .back-home-container {
+      margin-left: auto;
+    }
+    /* İletişim bilgileri & form yan yana, mobilde alt alta */
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 768px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+      /* Menü başlıkları altında buton fazla geniş kalmasın */
+      .navbar .btn-back-home {
+        padding: 0.4rem 0.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="navbar">
     <div class="container nav-wrapper">
-      <!-- Logo ortalandı -->
+      <!-- Logo ortalanmış, buton header içinde sağa yaslı -->
       <a href="index.html" class="logo mx-auto">
         <img src="images/logo.png" alt="NASA Teknik Hizmetler"/>
       </a>
+      <div class="back-home-container">
+        <a href="index.html" class="btn-back-home">
+          <i class="fas fa-home"></i> Ana Sayfa
+        </a>
+      </div>
     </div>
   </header>
 
   <main class="section alt" id="contact">
     <div class="container">
       <h2 class="section-title" data-i18n="contactNav">İletişim</h2>
-      <!-- Ana sayfaya dönüş -->
-      <!-- Ana Sayfaya Dön Butonu -->
-      <div class="back-home-container">
-        <a href="index.html" class="btn-back-home">
-          <i class="fas fa-home"></i> Ana Sayfaya
-        </a>
-      </div>
-
 
       <div class="contact-container">
         <div class="contact-info">
@@ -60,7 +85,7 @@
           <input type="hidden" name="_subject" value="Yeni İletişim Formu Mesajı"/>
 
           <div class="contact-actions">
-            <button type="submit" class="btn primary" data-i18n="formSubmit" data-i18n-value="formSubmit">
+            <button type="submit" class="btn primary" data-i18n="formSubmit">
               Gönder
             </button>
             <a href="https://wa.me/905316250694" class="btn whatsapp-btn" target="_blank" aria-label="WhatsApp" data-i18n="whatsappContact">
