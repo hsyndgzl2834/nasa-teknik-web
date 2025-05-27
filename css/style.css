@@ -109,16 +109,33 @@ p,li,label { margin-bottom:1rem; }
   position: relative;
   overflow: hidden;
   height: 60vh;
-  .hero-slider .swiper,
-  .hero-slider .swiper-wrapper,
-  .hero-slider .swiper-slide {
-      height: 60vh !important;   /* tüm yapıyı aynı yükseklik yap */
-      min-height: 60vh !important; /* bazı tarayıcılarda gerekebiliyor */
-    }
-        .hero-slider .swiper-slide {
-      border: 2px dashed red !important;
-      }
 }
+
+/* Swiper container ve slide’lara tam yükseklik ata */
+.hero-slider .swiper,
+.hero-slider .swiper-wrapper,
+.hero-slider .swiper-slide {
+  height: 60vh !important;
+  min-height: 60vh !important;
+}
+
+
+/* Arka plan resimlerinin tam kaplamasını garantile */
+.hero-slider .swiper-slide {
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+/* Swiper container ve slide’lara tam yükseklik ata */
+.hero-slider .swiper,
+.hero-slider .swiper-wrapper,
+.hero-slider .swiper-slide {
+  height: 60vh !important;
+  min-height: 60vh !important;
+}
+
+
+
 .swiper-slide {
   background-size: cover;
   background-position: center;
@@ -272,4 +289,32 @@ footer {
   .menu {
     display: flex !important;
   }
+}
+/* === ANA SAYFAYA DÖN BUTONU (INNER PAGES) === */
+.back-home-container {
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  background-color: #f5f7fa;
+}
+
+.btn-back-home {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background var(--transition);
+}
+
+.btn-back-home i {
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+
+.btn-back-home:hover {
+  background-color: var(--color-secondary);
 }
