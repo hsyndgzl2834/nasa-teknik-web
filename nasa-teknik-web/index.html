@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title data-i18n="siteTitle">NASA Teknik Hizmetler</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Swiper CSS -->
+<link href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" rel="stylesheet"/>
+<!-- Custom CSS -->
+<link href="css/style.css" rel="stylesheet"/>
+<!-- Lang JS -->
+<script defer="" src="js/lang.js"></script>
+</head>
+<body class="flex flex-col min-h-screen">
+<!-- HEADER -->
+<header class="navbar bg-white shadow sticky-top">
+<div class="container d-flex align-items-center justify-content-between">
+<a class="logo d-flex align-items-center" href="index.html">
+<img alt="NASA Teknik Hizmetler" class="h-10 w-auto max-w-[20px] md:max-w-full" src="images/logo.png" style="max-width: 20px; height: auto;"/>
+<button aria-label="Menu" class="nav-toggle d-lg-none btn btn-outline-secondary">
+<i class="fas fa-bars"></i>
+</button>
+<nav class="d-none d-lg-flex gap-4">
+<a class="hover:text-indigo-600" data-i18n="servicesTitle" href="#services">Hizmetlerimiz</a>
+<a class="hover:text-indigo-600" data-i18n="burnerTypesTitle" href="#burner-types">Brülör Tipleri</a>
+<a class="hover:text-indigo-600" data-i18n="combustionControlTitle" href="#combustion-control-types">Yakma Kontrol</a>
+<a class="hover:text-indigo-600" data-i18n="productsTitle" href="#products-preview">Ürünler</a>
+<a class="hover:text-indigo-600" data-i18n="aboutTitle" href="about.html">Hakkımızda</a>
+<a class="hover:text-indigo-600" data-i18n="faqTitle" href="faq.html">SSS</a>
+<a class="hover:text-indigo-600" data-i18n="contactNav" href="contact.html">İletişim</a>
+</nav>
+<div class="lang-switcher d-flex gap-2">
+<button class="btn btn-outline-primary btn-sm" data-lang="tr" onclick="setLanguage('tr')">TR</button>
+<button class="btn btn-outline-primary btn-sm" data-lang="en" onclick="setLanguage('en')">EN</button>
+</div>
+</div>
+</header>
+<!-- HERO SLIDER -->
+<section class="hero-slider relative flex-grow">
+<div class="swiper h-64 md:h-96">
+<div class="swiper-wrapper">
+<div class="swiper-slide bg-cover bg-center" style="background-image:url('images/hero1.jpg')">
+<div class="hero-overlay flex items-center justify-center h-full bg-black bg-opacity-50">
+<h1 class="text-white text-3xl md:text-5xl" data-i18n="heroTitle"></h1>
+</div>
+</div>
+<div class="swiper-slide bg-cover bg-center" style="background-image:url('images/hero2.jpg')"></div>
+<div class="swiper-slide bg-cover bg-center" style="background-image:url('images/hero3.jpg')"></div>
+</div>
+<div class="swiper-pagination"></div>
+<div class="swiper-button-prev"></div>
+<div class="swiper-button-next"></div>
+</div>
+</section>
+<!-- SERVICES -->
+<section class="py-8" id="services">
+<div class="container">
+<h2 class="section-title text-center mb-6" data-i18n="servicesTitle">Hizmetlerimiz</h2>
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+<div class="col">
+<div class="card h-100 shadow">
+<img alt="" class="card-img-top" src="images/service1.jpg"/>
+<div class="card-body">
+<h3 class="card-title" data-i18n="card1Title"></h3>
+<p class="card-text" data-i18n="card1Desc"></p>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card h-100 shadow">
+<img alt="" class="card-img-top" src="images/service2.jpg"/>
+<div class="card-body">
+<h3 class="card-title" data-i18n="card2Title"></h3>
+<p class="card-text" data-i18n="card2Desc"></p>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card h-100 shadow">
+<img alt="" class="card-img-top" src="images/service3.jpg"/>
+<div class="card-body">
+<h3 class="card-title" data-i18n="card3Title"></h3>
+<p class="card-text" data-i18n="card3Desc"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- BURNER TYPES -->
+<section class="py-8 bg-light" id="burner-types">
+<div class="container">
+<h2 class="section-title text-center mb-6" data-i18n="burnerTypesTitle">Brülör Tipleri</h2>
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+<div class="col">
+<div class="card h-100 shadow">
+<div class="card-body">
+<h3 class="card-title" data-i18n="brn1Title"></h3>
+<p class="card-text" data-i18n="brn1Desc"></p>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card h-100 shadow">
+<div class="card-body">
+<h3 class="card-title" data-i18n="brn2Title"></h3>
+<p class="card-text" data-i18n="brn2Desc"></p>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card h-100 shadow">
+<div class="card-body">
+<h3 class="card-title" data-i18n="brn3Title"></h3>
+<p class="card-text" data-i18n="brn3Desc"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- COMBUSTION CONTROL TYPES -->
+<section class="py-8" id="combustion-control-types">
+<div class="container">
+<h2 class="section-title text-center mb-6" data-i18n="combustionControlTitle">Yakma Kontrol Tipleri</h2>
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+<div class="col">
+<div class="card h-100 shadow">
+<div class="card-body">
+<h3 class="card-title" data-i18n="ctl1Title"></h3>
+<p class="card-text" data-i18n="ctl1Desc"></p>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card h-100 shadow">
+<div class="card-body">
+<h3 class="card-title" data-i18n="ctl2Title"></h3>
+<p class="card-text" data-i18n="ctl2Desc"></p>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card h-100 shadow">
+<div class="card-body">
+<h3 class="card-title" data-i18n="ctl3Title"></h3>
+<p class="card-text" data-i18n="ctl3Desc"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PRODUCTS PREVIEW -->
+<section class="py-8 bg-light" id="products-preview">
+<div class="container">
+<h2 class="section-title text-center mb-6" data-i18n="productsTitle">Ürünlerimiz</h2>
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+<div class="col">
+<a class="card h-100 text-decoration-none text-dark" href="product1.html">
+<img alt="" class="card-img-top" src="images/product1.jpg"/>
+<div class="card-body">
+<h3 class="card-title" data-i18n="prd1Title"></h3>
+</div>
+</a>
+</div>
+<div class="col">
+<a class="card h-100 text-decoration-none text-dark" href="product2.html">
+<img alt="" class="card-img-top" src="images/product2.jpg"/>
+<div class="card-body">
+<h3 class="card-title" data-i18n="prd2Title"></h3>
+</div>
+</a>
+</div>
+<div class="col">
+<a class="card h-100 text-decoration-none text-dark" href="product3.html">
+<img alt="" class="card-img-top" src="images/product3.jpg"/>
+<div class="card-body">
+<h3 class="card-title" data-i18n="prd3Title"></h3>
+</div>
+</a>
+</div>
+<div class="col">
+<a class="card h-100 text-decoration-none text-dark" href="product4.html">
+<img alt="" class="card-img-top" src="images/product4.jpg"/>
+<div class="card-body">
+<h3 class="card-title" data-i18n="prd4Title"></h3>
+</div>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer class="bg-dark text-white text-center py-4 mt-auto">
+<div class="container">
+<p data-i18n="footerText"></p>
+</div>
+</footer>
+<!-- Scripts -->
+<script defer="" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      new Swiper('.swiper', {
+      loop: true,
+      autoplay: {
+        delay: 4000,              // her 4 saniyede bir geçiş
+        disableOnInteraction: false
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      }
+    } );
+    });
+    function setLanguage(lang) {
+      const url = new URL(window.location);
+      url.searchParams.set('lang', lang);
+      window.location = url;
+    }
+  </script>
+</body>
+</html>
