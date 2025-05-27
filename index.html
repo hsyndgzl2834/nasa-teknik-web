@@ -28,7 +28,7 @@
 <button aria-label="Menu" class="nav-toggle d-lg-none btn btn-outline-secondary">
 <i class="fas fa-bars"></i>
 </button>
-<nav class="d-none d-lg-flex gap-4">
+<nav class="d-none d-lg-flex gap-4 d-none d-lg-flex">
 <a class="hover:text-indigo-600" data-i18n="servicesTitle" href="#services">Hizmetlerimiz</a>
 <a class="hover:text-indigo-600" data-i18n="burnerTypesTitle" href="#burner-types">Brülör Tipleri</a>
 <a class="hover:text-indigo-600" data-i18n="combustionControlTitle" href="#combustion-control-types">Yakma Kontrol</a>
@@ -252,6 +252,47 @@
       nav.classList.toggle('w-100');
       nav.classList.toggle('z-10');
     });
+  });
+</script>
+
+
+<!-- Mobile nav toggle script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const navToggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('nav');
+  navToggle.addEventListener('click', function() {
+    nav.classList.toggle('d-none');
+    nav.classList.toggle('d-flex');
+    nav.classList.toggle('flex-column');
+    nav.classList.toggle('gap-2');
+  });
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth < 992) {
+        nav.classList.add('d-none');
+        nav.classList.remove('d-flex','flex-column','gap-2');
+      }
+    });
+  });
+});
+</script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('nav-menu');
+    if(btn && menu) {
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('open');
+      });
+      menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth < 992) menu.classList.remove('open');
+        });
+      });
+    }
   });
 </script>
 

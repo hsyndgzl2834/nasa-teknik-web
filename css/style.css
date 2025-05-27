@@ -336,3 +336,70 @@ footer {
 .btn-back-home:hover {
   background-color: var(--color-secondary);
 }
+/* Mobile nav fixes */
+@media (max-width: 991.98px) {
+  header { position: relative; }
+  nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: 1000;
+    padding: 1rem;
+  }
+}
+
+/* Ensure nav-toggle button is always visible */
+.nav-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1100;
+}
+
+/* Slider arrow visibility on mobile */
+@media (max-width: 991.98px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: block !important;
+    opacity: 1 !important;
+    z-index: 1000;
+  }
+}
+
+/* Hide slider navigation arrows on all devices */
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Mobile menu toggle */
+@media (max-width: 991.98px) {
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    z-index: 1100;
+  }
+  #nav-menu {
+    display: none !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 1rem;
+  }
+  #nav-menu.open {
+    display: flex !important;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
