@@ -232,5 +232,28 @@
       window.location = url;
     }
   </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('header nav');
+
+    toggleBtn.addEventListener('click', () => {
+      nav.classList.toggle('d-none');
+      nav.classList.toggle('d-flex');
+      nav.classList.toggle('flex-column');
+      nav.classList.toggle('gap-2');
+      nav.classList.toggle('bg-white');
+      nav.classList.toggle('p-4');
+      nav.classList.toggle('shadow');
+      nav.classList.toggle('position-absolute');
+      nav.classList.toggle('top-100');
+      nav.classList.toggle('start-0');
+      nav.classList.toggle('w-100');
+      nav.classList.toggle('z-10');
+    });
+  });
+</script>
+
 </body>
 </html>
